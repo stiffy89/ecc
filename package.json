@@ -7,33 +7,41 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^7",
-    "express": "^4"
+    "express": "^4",
+    "@sap/xssec": "^3",
+    "passport": "^0"
   },
   "devDependencies": {
-    "@cap-js/sqlite": "^1"
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7",
+    "@sap/ux-specification": "^1.108.12"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "watch-employees": "cds watch --open employees/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "requires": {
-        "travelexpenses": {
-            "kind": "odata",
-            "model": "srv/external/travelexpenses",
-            "[production]": {
-                "credentials": {
-                    "destination": "dest_ecc",
-                    "path" : "/sap/opu/odata/sap/z_travel_and_expenses_cfg_srv"
-                }
-            }
-        },
+      "travelexpenses": {
+        "kind": "odata",
+        "model": "srv/external/travelexpenses",
         "[production]": {
-            "auth": {
-                "kind": "xsuaa",
-                "restrict_all_services": false
-            }
-        },
-        "auth": "xsuaa"
+          "credentials": {
+            "destination": "dest_ecc",
+            "path": "/sap/opu/odata/sap/z_travel_and_expenses_cfg_srv"
+          }
+        }
+      },
+      "[production]": {
+        "auth": {
+          "kind": "xsuaa",
+          "restrict_all_services": false
+        }
+      },
+      "auth": "xsuaa"
     }
-  }
+  },
+  "sapux": [
+    "app/employees"
+  ]
 }

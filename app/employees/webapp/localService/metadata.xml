@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="TravelExpensesService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="Employees" EntityType="TravelExpensesService.Employees"/>
+            </EntityContainer>
+            <EntityType Name="Employees">
+                <Key>
+                    <PropertyRef Name="Bukrs"/>
+                    <PropertyRef Name="Persk"/>
+                    <PropertyRef Name="compcode"/>
+                    <PropertyRef Name="subgroup"/>
+                </Key>
+                <Property Name="Bukrs" Type="Edm.String" MaxLength="4" Nullable="false"/>
+                <Property Name="Persk" Type="Edm.String" MaxLength="2" Nullable="false"/>
+                <Property Name="HasCreditCard" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="QuickClaimMealAllowance" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="Uname" Type="Edm.String" MaxLength="12" Nullable="false"/>
+                <Property Name="HealthCheckInitiated" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="Erkla" Type="Edm.String" MaxLength="1" Nullable="false"/>
+                <Property Name="QuickClaim" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="QuickClaimKilometres" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="QuickClaimHealthCheck" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="Kostl" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="Pernr" Type="Edm.String" MaxLength="8" Nullable="false"/>
+                <Property Name="Ename" Type="Edm.String" MaxLength="40" Nullable="false"/>
+                <Property Name="Orgeh" Type="Edm.String" MaxLength="8" Nullable="false"/>
+                <Property Name="Stext" Type="Edm.String" MaxLength="40" Nullable="false"/>
+                <Property Name="Morei" Type="Edm.String" MaxLength="2" Nullable="false"/>
+                <Property Name="compcode" Type="Edm.String" MaxLength="4" Nullable="false"/>
+                <Property Name="subgroup" Type="Edm.String" MaxLength="2" Nullable="false"/>
+                <Property Name="username" Type="Edm.String" MaxLength="12" Nullable="false"/>
+                <Property Name="personnelnum" Type="Edm.String" MaxLength="8" Nullable="false"/>
+                <Property Name="org" Type="Edm.String" MaxLength="8" Nullable="false"/>
+                <Property Name="employeename" Type="Edm.String" MaxLength="40" Nullable="false"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
